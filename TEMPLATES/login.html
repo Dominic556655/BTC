@@ -1,0 +1,106 @@
+
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<header>
+    <a style="position: relative; right: 500px; margin-top: 50px; display:inline-block ">
+        <img src="{% static 'img/logo.png' %}" alt="Logo">
+    </a>
+</header>
+<style> 
+      body{
+    background: url('{% static "img/hero-bg.png" %}') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: scroll;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    }
+    h3{
+        color: red
+    }
+        .login-container {
+      max-width: 400px;
+      margin: -40px auto;
+      background: white;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 30px;
+    }
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .login-container form input[type="text"],
+    .login-container form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: -3px 0;
+      border: 1px solid rgb(160, 166, 166);
+      border-radius: 5px;
+    }
+    .login-container form button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    .google-btn {
+      margin-top: 0;
+      background: white;
+      width: 100%;
+      padding: 10px;
+    }
+    .google-btn img {
+  width: 20px;
+  margin-right: 8px;
+}
+    
+</style>
+</head>
+<body>
+{% for message in messages %}
+    <h3>style="text-align: center;"{{messages}}</h3>
+{% endfor %}
+
+<div class="login-container">
+    <h1 style="text-align: center; padding-top:-70px; margin-right: 40px;">Log in:</h1>
+    <span><small>welcome back! log in to stay updated with your rewards.</small></span>
+
+<form  action="login" method="POST">
+    {% csrf_token %}
+    <p>Username</p>
+    <input type="text" name="username" placeholder ='username' required/>
+    <p>Password</p>
+    <input type="password" name="password" placeholder ='password' required/>
+    
+    <br>
+    <p style="text-align: right;color: solid rgb(56, 57, 57); opacity:0.7;">
+        <a href="password_reset">Forgot password?
+        </a>
+    </p>
+    <button type="Submit">log in</button>
+</form>
+
+    <a href="{% provider_login_url 'google' %}">
+    <button class="google-btn"> <img src="{% static '/google.png'%}">Continue with Google</button>
+    </a>
+
+    <p style="text-align:center; margin-top:10px;">
+      Don't have an account? <a href= 'Register' >Sign_up</a>
+    </p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Crypto - Blockchain</title>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="cryptocurrency, unica, creative, html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!--favicon-->
+  <link href="{% static 'img/favicon.ico'%}" rel="shortcut icon"/>
+  <!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}"/>
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}"/>
+<link rel="stylesheet" href="{% static 'css/themify-icons.css'%}"/>
+<link rel="stylesheet" href="{% static 'css/owl.carousel.css'%}"/>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  </head>
+<body>
+  <!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+  <header class="header-section clearfix">
+		<div class="container-fluid">
+			<a href="index.html" class="site-logo">
+				<img src="{% static 'img/logo.png'%}" alt="">
+      </a>
+			<div class="responsive-bar"></div>
+				<a href="" class="user"><i class="bars"></i></a>
+				<a href="Home" class="site-btn">Home</a>
+		</div>
+	</header>
+  <br>
+  <br>
+  <h2 class="text-center mb-4">Deposit and Invest Securely with Crypto</h2>
+  
+  <style>
+    
+
+    *{
+      box-sizing: border-box;
+      margin: 5;
+      padding: 0;
+    }
+    body{
+      background: url('{% static "img/hero-bg.png" %}') no-repeat center center fixed;
+      background-size:cover;
+      background-attachment: scroll;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 200vh;
+      padding: 0;
+      box-sizing: border-box;
+      margin: 0;
+    }
+    .side-slider-container {
+      position: relative;
+	    min-width: 330px !important;
+ 	    max-width: 330px !important;
+	    flex: 0 0 330px !important;
+      height: 400px;
+      max-height: none !important;
+      min-height: 400px !important;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+
+    }
+    .scroll-track {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      width: max-content;
+      transition: transform 0.5s ease-in-out;
+      /* === Background Section Start === */
+      background: linear-gradient(to bottom right, #000000, #333333);
+      /* === Background Section End === */
+    }
+    .plan {
+      flex: 0 0 320px;
+      padding: 20px;
+      padding-bottom: 90px;
+      border-right: 0px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    .plan h2 {
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 3px;
+      text-align: center;
+    }
+    .plan ul {
+      list-style: none;
+      padding: 0;
+    }
+    .plan ul li {
+      font-size: 14px;
+      padding: 4px 0;
+      color: #f0f0f0;
+      text-align: center;
+    }
+    .plan button {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 14px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .plan button:hover {
+      background-color: #218838;
+    }
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      z-index: 10;
+    }
+    .controls button {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .controls button:hover {
+      background-color: #0056b3;
+    }
+
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="side-slider-container">
+    <div class="controls">
+      <button onclick="prevSlide()">⬅️</button>
+      <button onclick="nextSlide()">➡️</button>
+    </div>
+    <div class="scroll-track" id="track">
+      <div class="plan">
+        <h2>🔵 1. Basic Plan</h2>
+        <ul>
+          <li>Best for Beginners</li>
+          <li>💸 Withdrawal Limit: $700-$1,000/month</li>
+          <li>🏱  Referral Bonus: 2%</li>
+          <li>💰 Price: $250</li>
+        </ul>
+      </div>
+
+      <div class="plan">
+        <h2>🟠 2. Standard Plan</h2>
+        <ul>
+          <li>For Regular Investors</li>
+          <li>💸 Withdrawal Limit: $1,500-$3,000/month</li>
+          <li>🏱  Referral Bonus: 5%</li>
+          <li>💰 Price: $700</li>
+        </ul>
+      </div>
+
+      <div class="plan">
+        <h2>🟡 3. Platinum Plan</h2>
+        <ul>
+          <li>For Small Scale Businesses</li>
+          <li>💸 Withdrawal Limit: $5,000-$10,000</li>
+          <li>🏱  Referral Bonus: $10</li>
+          <li>💰 Price: $1,500</li>
+        </ul>
+      </div>
+
+      <div class="plan">
+        <h2>🔴 4. Business Plan</h2>
+        <ul>
+          <li>Best for Business Investors</li>
+          <li>💸 Higher Withdrawal Limit: $50,000-$100,000/month</li>
+          <li>⚡ Priority Transaction Processing</li>
+          <li>🏱  Referral Bonus: 20%</li>
+          <li>🤝 Dedicated Customer Support</li>
+          <li>💰 Price: $10,000</li>
+        </ul>
+      </div>
+
+      <div class="plan">
+        <h2>🔵 5. Premium / Enterprise Plan</h2>
+        <ul>
+          <li>Best for Enterprises or Heavy Investors</li>
+          <li>♾️ Unlimited Transactions</li>
+          <li>🏱  Referral Bonus: 40%</li>
+          <li>🧑‍💼 Dedicated Account Manager</li>
+          <li>🕐 24/7 Priority Support</li>
+          <li>💰 Price: $30,000</li>
+        </ul>
+       </div>
+    </div>
+  </div>
+
+  <script>
+    const track = document.getElementById('track');
+    let index = 0;
+    const totalSlides = track.children.length;
+
+    function showSlide(i) {
+      index = (i + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${index * 320}px)`;
+    }
+
+    function nextSlide() {
+      showSlide(index + 1);
+    }
+
+    function prevSlide() {
+      showSlide(index - 1);
+    }
+
+    setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    function goToTransaction(planName, amount) {
+      alert(`You selected: ${planName} | Amount: $${amount}`);
+    }
+  </script>
+
+  <div class="container py-5">
+
+    <div class="row mb-5">
+      <div class="col-md-6">
+        <div class="card p-4 shadow-sm">
+          <h4>Send Bitcoin (BTC)</h4>
+          <p><strong>Wallet:</strong> <code>3Kf2Csb2ran16RM1bmRwhS1qTymBQzUXKq</code></p>
+          <small>Copy and send your investment to the wallet above.</small>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-4 shadow-sm">
+          <h4>Send Ethereum (ETH)</h4>
+          <p><strong>Wallet:</strong> <code>0x5D8A41Cb0b21FFAe15c2aFf4B6b3dAC33ab7612e</code></p>
+          <small>Ensure you send via the correct network (ERC20).</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="card p-4 shadow-sm">
+      <h4 class="mb-3">Submit Your Payment Details</h4>
+
+      <form method="POST" action='deposit'>
+         {% csrf_token %}
+
+        <div class="mb-3">
+          <label for="coin" class="form-label">Select Coin</label>
+          <select id="coin" class="form-select">
+            <option>Bitcoin (BTC)</option>
+            <option>Ethereum (ETH)</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Amount Sent</label>
+          <input type="text" class="form-control" id="amount" placeholder="e.g. 200">
+          <script>
+            const amountInput = document.getElementById('amount');
+
+            amountInput.addEventListener('input', function () {
+              // Remove all non-digit and non-dot characters (leave number only)
+              let value = this.value.replace(/[^0-9.]/g, '');
+
+              // Only add dollar sign if there's a number
+              if (value) {
+                this.value = '$' + value;
+              } else {
+                this.value = '';
+              }
+            });
+          </script>
+
+        </div>
+        <div class="mb-3">
+          <label for="plan" class="form-label">Select-plan</label>
+          <select id="select-plan" class="form-select" >
+            <option>Basic Plan</option>
+            <option>Standard Plan</option>
+            <option>Platinum Plan</option>
+            <option>Business Plan</option>
+            <option>Premium/Enterprise Plan</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Your Email (for confirmation)</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <button type="submit" class="btn btn-success">Submit Payment</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    window.addEventListener('load', function () {
+      const preloader = document.getElementById('preloder');
+      if (preloader) {
+        preloader.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

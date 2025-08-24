@@ -1,0 +1,102 @@
+{% load static %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<header>
+    <a style="position: relative; right: 500px; margin-top: 50px; display:inline-block ">
+        <img src="{% static 'img/logo.png' %}" alt="Logo">
+    </a>
+</header>
+<style>
+
+        body{
+    background: url('{% static "img/hero-bg.png" %}') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: scroll;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    }
+    h3{
+        color: red;
+        text-align: center;
+        
+    }
+   .Register-container {
+      max-width: 400px;
+      margin: -40px auto;
+      background: white;
+      padding: 30px;
+      box-shadow: 0 0 100px rgba(0,0,0,0.1);
+      border-radius: 30px;
+    }
+        .Register-container form button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+        .Register-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .Register-container form input[type="text"],
+    .Register-container form input[type="email"],
+    .Register-container form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: -3px 0;
+      border: 1px solid rgb(160, 166, 166);
+      border-radius: 5px;
+    }
+</style>
+
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+
+<div class="Register-container">
+    <h1 style=" padding-top:-70px; text-align: center;">Sign up Below:</h1>
+    <div style="text-align: center;"><span><small>Join crypto-blockchain to earn rewards and power the future of decentralized AI!</small></span></div>
+    <form method="POST" action="Register">
+    {% csrf_token %}
+    <p>Full Name</p>
+    <input type="text" name="Full Name" placeholder="Enter full name" >
+    <p>Username</p>
+    <input type="text" name="username" placeholder ="Enter username" required/>
+    <p>Email</p>
+    <input type="email" name="email" placeholder ="Enter email" required />
+    <p>Password</p>
+    <input type="password" name="password" id="password" required oninput="showConfirm()" placeholder ="Enter password" required>
+
+    <div id="confirmDiv" style="display: none">
+        <p>Repeat Password</p>
+    <input type="password" name="password2" placeholder ='Repeat password' required></div>
+    
+    <br>
+    <br>
+    <button type="submit">Confirm </button>
+
+        <p style="text-align:center; margin-top:10px;">
+      Already have an account? <a href= 'login' >log in</a>
+    </p>
+    
+<script>
+    function showConfirm() {
+        const passwordInput = document.getElementById("password");
+        const confirmDiv = document.getElementById("confirmDiv");
+
+        confirmDiv.style.display = passwordInput.value.length > 0 ? "block" : "none";
+    }
+</script>
+
+    </form>
+</div>
