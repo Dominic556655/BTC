@@ -32,13 +32,30 @@
 				<img src="{% static 'img/logo.png'%}" alt="">
       </a>
 			<div class="responsive-bar"></div>
-				<a href="" class="user"><i class="bars"></i></a>
-				<a href="Home" class="site-btn">Home</a>
-		</div>
+				<!-- <a href="" class="user"><i class="bars"></i></a> -->
+	    <nav class="navbar navbar-expand-md navbar-light d-flex d-sm-none">
+      <div class="container-fluid">
+    <!-- Hamburger button (only shows on sm and below) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <!-- Collapsible menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav">
+              <li class="nav-item"><a style="margin-left: 270px;" href="Home" class="nav-link">Home</a></li>
+          </ul>
+        </div> 
+       </div>
+      </div>
+    </nav>
+	<div class="responsive-bar"><i class="bars"></i></div>
+          <a href="Home" class="site-btn">Home</a>
 	</header>
   <br>
   <br>
-  <h2 class="text-center mb-4">Deposit and Invest Securely with Crypto</h2>
+  <h2 style="margin-top:75px ;" class="text-center mb-4">Deposit and Invest Securely with Crypto</h2>
   
   <style>
     
@@ -275,7 +292,7 @@
         </div>
         <div class="mb-3">
           <label for="amount" class="form-label">Amount Sent</label>
-          <input type="text" class="form-control" id="amount" placeholder="e.g. 200">
+          <input type="text" class="form-control" id="amount"  name="amount" placeholder="e.g. 200">
           <script>
             const amountInput = document.getElementById('amount');
 
@@ -305,7 +322,7 @@
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Your Email (for confirmation)</label>
-          <input type="email" class="form-control" id="email">
+          <input type="email" class="form-control" id="email" name="email">
         </div>
         <button type="submit" class="btn btn-success">Submit Payment</button>
       </form>

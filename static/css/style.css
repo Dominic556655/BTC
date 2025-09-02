@@ -11,17 +11,12 @@
 /* Template default CSS
 /*----------------------------------------*/
 
-@font-face {
-	font-family: 'Futura';
-	src: url("../fonts/Futura.woff");
-}
 
 html,
 body {
 	height: 100%;
 	font-family: "Lato", sans-serif;
 	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
 }
 
 h1,
@@ -33,7 +28,7 @@ h6 {
 	color: #20509e;
 	margin: 0;
 	font-weight: 500;
-	font-family: "Futura", sans-serif;
+	font-family: "Lato", sans-serif;
 }
 
 h1 {
@@ -142,7 +137,7 @@ ol {
 	font-weight: 500;
 	line-height: 16px;
 	border-radius: 50px;
-	font-family: "Futura", sans-serif;
+	font-family: "lato", sans-serif;
 	min-width: 170px;
 	text-align: center;
 	border: 2px solid #7ad4cc;
@@ -319,19 +314,19 @@ ol {
 
 .menu-list {
 	list-style: none;
-}
-
-.menu-list li {
-	display: inline;
+	display: flex;
+	gap: 10px;
+	padding: 0;
+	margin: 0;
 }
 
 .menu-list li a {
 	display: inline-block;
-	font-family: "Futura", sans-serif;
+	font-family: "lato", sans-serif;
 	font-size: 16px;
 	padding: 10px 5px;
 	margin-right: 30px;
-	color: #fff;
+	color: #0e3848;
 }
 
 /*---------------------
@@ -403,7 +398,7 @@ ol {
 }
 
 .about-text h2 {
-	font-size: 48px;
+	font-size: 38px;
 	margin-bottom: 25px;
 }
 
@@ -1638,12 +1633,15 @@ ol {
 @media only screen and (max-width: 767px) {
 	.header-section {
 		padding: 30px 0;
-		background: #fff;
+		background:none;
 	}
+	  .about-text {
+    	margin-top: 100px; /* push down more only on small screens */
+  }
 	.header-section .responsive-bar {
 		float: right;
 		font-size: 25px;
-		display: block;
+		display: flex;
 		cursor: pointer;
 	}
 	.header-section .user {
@@ -1669,14 +1667,14 @@ ol {
 		list-style: none;
 	}
 	.menu-list li {
-		display: block;
+		display: flex;
 		border-top: 1px solid #e1e1e1;
 	}
 	.menu-list li a {
-		display: block;
+		display: flex;
 		padding: 10px 5px;
 		margin-right: 0;
-		color: #20509e;
+		color: #f6f7f9;
 	}
 	.hero-text h2 {
 		font-size: 40px;
@@ -1817,4 +1815,22 @@ ol {
 	.comment .comment-content {
 		padding-left: 0;
 	}
+}
+.navbar .navbar-toggler {
+    order: -1; /* move it to the first position in flex */
+    margin-left: 280px; /* align left */
+	margin-top: -35px;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+}
+.site-btn:hover {
+  	background: #e9eaec;
 }
